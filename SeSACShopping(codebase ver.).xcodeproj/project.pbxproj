@@ -9,23 +9,33 @@
 /* Begin PBXBuildFile section */
 		A08564F22B663D2600E44561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08564F12B663D2600E44561 /* AppDelegate.swift */; };
 		A08564F42B663D2600E44561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08564F32B663D2600E44561 /* SceneDelegate.swift */; };
-		A08564F62B663D2600E44561 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08564F52B663D2600E44561 /* ViewController.swift */; };
 		A08564F92B663D2600E44561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08564F72B663D2600E44561 /* Main.storyboard */; };
 		A08564FB2B663D2900E44561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08564FA2B663D2900E44561 /* Assets.xcassets */; };
 		A08564FE2B663D2900E44561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08564FC2B663D2900E44561 /* LaunchScreen.storyboard */; };
 		A08565072B663DBF00E44561 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A08565062B663DBF00E44561 /* SnapKit */; };
 		A08565092B663DBF00E44561 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A08565082B663DBF00E44561 /* SnapKit-Dynamic */; };
+		A08565122B663FA100E44561 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08565112B663FA100E44561 /* SearchViewController.swift */; };
+		A08565142B663FAF00E44561 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08565132B663FAF00E44561 /* SettingViewController.swift */; };
+		A08565172B66436900E44561 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08565162B66436900E44561 /* OnboardingViewController.swift */; };
+		A085651B2B66437E00E44561 /* ProfileNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085651A2B66437E00E44561 /* ProfileNameViewController.swift */; };
+		A085651D2B66438800E44561 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085651C2B66438800E44561 /* ProfileImageViewController.swift */; };
+		A08565202B6644A700E44561 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085651F2B6644A700E44561 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A08564EE2B663D2600E44561 /* SeSACShopping(codebase ver.).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSACShopping(codebase ver.).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08564F12B663D2600E44561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A08564F32B663D2600E44561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A08564F52B663D2600E44561 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A08564F82B663D2600E44561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A08564FA2B663D2900E44561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A08564FD2B663D2900E44561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A08564FF2B663D2900E44561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A08565112B663FA100E44561 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A08565132B663FAF00E44561 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A08565162B66436900E44561 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A085651A2B66437E00E44561 /* ProfileNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameViewController.swift; sourceTree = "<group>"; };
+		A085651C2B66438800E44561 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
+		A085651F2B6644A700E44561 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +70,92 @@
 		A08564F02B663D2600E44561 /* SeSACShopping(codebase ver.) */ = {
 			isa = PBXGroup;
 			children = (
-				A08564F12B663D2600E44561 /* AppDelegate.swift */,
-				A08564F32B663D2600E44561 /* SceneDelegate.swift */,
-				A08564F52B663D2600E44561 /* ViewController.swift */,
-				A08564F72B663D2600E44561 /* Main.storyboard */,
-				A08564FA2B663D2900E44561 /* Assets.xcassets */,
-				A08564FC2B663D2900E44561 /* LaunchScreen.storyboard */,
+				A085651E2B6643CA00E44561 /* Protocols */,
+				A085650F2B663F2200E44561 /* Resources */,
+				A085650E2B663EEE00E44561 /* Scene */,
+				A085650D2B663ED500E44561 /* Extensions */,
+				A085650A2B663E5900E44561 /* App */,
 				A08564FF2B663D2900E44561 /* Info.plist */,
 			);
 			path = "SeSACShopping(codebase ver.)";
+			sourceTree = "<group>";
+		};
+		A085650A2B663E5900E44561 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A08564F12B663D2600E44561 /* AppDelegate.swift */,
+				A08564F32B663D2600E44561 /* SceneDelegate.swift */,
+				A08564FC2B663D2900E44561 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A085650B2B663E6900E44561 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A08565112B663FA100E44561 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A085650C2B663E8A00E44561 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A08565132B663FAF00E44561 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		A085650D2B663ED500E44561 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A085650E2B663EEE00E44561 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A08564F72B663D2600E44561 /* Main.storyboard */,
+				A08565182B66436D00E44561 /* Profile */,
+				A08565152B66435A00E44561 /* Onboarding */,
+				A085650B2B663E6900E44561 /* Search */,
+				A085650C2B663E8A00E44561 /* Setting */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		A085650F2B663F2200E44561 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A08564FA2B663D2900E44561 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A08565152B66435A00E44561 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A08565162B66436900E44561 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A08565182B66436D00E44561 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A085651A2B66437E00E44561 /* ProfileNameViewController.swift */,
+				A085651C2B66438800E44561 /* ProfileImageViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A085651E2B6643CA00E44561 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A085651F2B6644A700E44561 /* UIViewController+Extension.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A08564F62B663D2600E44561 /* ViewController.swift in Sources */,
+				A08565202B6644A700E44561 /* UIViewController+Extension.swift in Sources */,
+				A08565142B663FAF00E44561 /* SettingViewController.swift in Sources */,
+				A08565172B66436900E44561 /* OnboardingViewController.swift in Sources */,
 				A08564F22B663D2600E44561 /* AppDelegate.swift in Sources */,
+				A085651D2B66438800E44561 /* ProfileImageViewController.swift in Sources */,
+				A08565122B663FA100E44561 /* SearchViewController.swift in Sources */,
+				A085651B2B66437E00E44561 /* ProfileNameViewController.swift in Sources */,
 				A08564F42B663D2600E44561 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
