@@ -29,7 +29,8 @@ class ProfileImageCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureCell() {
-        //profileImage = UIButton.borderStyle() as! ProfileButton
+        // 왜 안될까?
+        profileImageCell.highlightBorderStyle()
     }
     
     private func setupContsraints() {

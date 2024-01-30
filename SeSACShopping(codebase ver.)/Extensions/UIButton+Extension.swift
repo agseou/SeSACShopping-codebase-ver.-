@@ -9,11 +9,9 @@ import UIKit
 
 extension UIButton {
     
-    static func borderStyle() -> UIButton {
-        let button = UIButton()
-        button.layer.borderColor = UIColor.accent.cgColor
-        button.layer.borderWidth = 5
-        return button
+    func highlightBorderStyle() {
+        self.layer.borderColor = UIColor.accent.cgColor
+        self.layer.borderWidth = 5
     }
     
 }

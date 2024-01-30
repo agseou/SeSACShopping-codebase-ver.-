@@ -9,7 +9,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
-
+    let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +23,30 @@ class SettingViewController: UIViewController {
 
 extension SettingViewController: ConfigurableView {
     func configureHierarchy() {
-        
+        view.addSubview(tableView)
     }
     
     func configureView() {
-        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func setupContsraints() {
         
+    }
+    
+    
+}
+
+extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        
+        return cell
     }
     
     
