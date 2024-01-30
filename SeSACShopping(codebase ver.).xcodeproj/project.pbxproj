@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A042E2942B6784C5000F0445 /* WideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042E2932B6784C5000F0445 /* WideButton.swift */; };
+		A042E2962B6790AB000F0445 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042E2952B6790AB000F0445 /* UIButton+Extension.swift */; };
+		A042E2982B6791C7000F0445 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042E2972B6791C7000F0445 /* ProfileButton.swift */; };
+		A042E29A2B686D8F000F0445 /* ProfileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042E2992B686D8F000F0445 /* ProfileImageCollectionViewCell.swift */; };
 		A08564F22B663D2600E44561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08564F12B663D2600E44561 /* AppDelegate.swift */; };
 		A08564F42B663D2600E44561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08564F32B663D2600E44561 /* SceneDelegate.swift */; };
 		A08564F92B663D2600E44561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08564F72B663D2600E44561 /* Main.storyboard */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A042E2932B6784C5000F0445 /* WideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideButton.swift; sourceTree = "<group>"; };
+		A042E2952B6790AB000F0445 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		A042E2972B6791C7000F0445 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
+		A042E2992B686D8F000F0445 /* ProfileImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A08564EE2B663D2600E44561 /* SeSACShopping(codebase ver.).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSACShopping(codebase ver.).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08564F12B663D2600E44561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A08564F32B663D2600E44561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A042E2922B67849D000F0445 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A042E2932B6784C5000F0445 /* WideButton.swift */,
+				A042E2972B6791C7000F0445 /* ProfileButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A08564E52B663D2600E44561 = {
 			isa = PBXGroup;
 			children = (
@@ -70,11 +87,12 @@
 		A08564F02B663D2600E44561 /* SeSACShopping(codebase ver.) */ = {
 			isa = PBXGroup;
 			children = (
+				A085650A2B663E5900E44561 /* App */,
 				A085651E2B6643CA00E44561 /* Protocols */,
 				A085650F2B663F2200E44561 /* Resources */,
 				A085650E2B663EEE00E44561 /* Scene */,
 				A085650D2B663ED500E44561 /* Extensions */,
-				A085650A2B663E5900E44561 /* App */,
+				A042E2922B67849D000F0445 /* Components */,
 				A08564FF2B663D2900E44561 /* Info.plist */,
 			);
 			path = "SeSACShopping(codebase ver.)";
@@ -109,6 +127,7 @@
 		A085650D2B663ED500E44561 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A042E2952B6790AB000F0445 /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,6 +165,7 @@
 			children = (
 				A085651A2B66437E00E44561 /* ProfileNameViewController.swift */,
 				A085651C2B66438800E44561 /* ProfileImageViewController.swift */,
+				A042E2992B686D8F000F0445 /* ProfileImageCollectionViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -239,8 +259,12 @@
 				A08565202B6644A700E44561 /* UIViewController+Extension.swift in Sources */,
 				A08565142B663FAF00E44561 /* SettingViewController.swift in Sources */,
 				A08565172B66436900E44561 /* OnboardingViewController.swift in Sources */,
+				A042E2982B6791C7000F0445 /* ProfileButton.swift in Sources */,
+				A042E2962B6790AB000F0445 /* UIButton+Extension.swift in Sources */,
 				A08564F22B663D2600E44561 /* AppDelegate.swift in Sources */,
+				A042E29A2B686D8F000F0445 /* ProfileImageCollectionViewCell.swift in Sources */,
 				A085651D2B66438800E44561 /* ProfileImageViewController.swift in Sources */,
+				A042E2942B6784C5000F0445 /* WideButton.swift in Sources */,
 				A08565122B663FA100E44561 /* SearchViewController.swift in Sources */,
 				A085651B2B66437E00E44561 /* ProfileNameViewController.swift in Sources */,
 				A08564F42B663D2600E44561 /* SceneDelegate.swift in Sources */,
