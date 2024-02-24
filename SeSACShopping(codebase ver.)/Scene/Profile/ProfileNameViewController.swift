@@ -10,6 +10,8 @@ import SnapKit
 
 class ProfileNameViewController: BaseViewController {
     
+    let viewModel = ProfileNameViewModel()
+    
     let editProfileButton = ProfileButton()
     let overlayIcon = UIImageView(image: UIImage(resource: .camera))
     let nameTextField = UITextField()
@@ -20,7 +22,12 @@ class ProfileNameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        viewModel.outputName.bind { value in
+            self.noticeLabel.text = value
+        }
+        viewModel.isActiveButton.bind { value in
+            self.completeButton.isEnabled = value
+        }
     }
     
     override func configureHierarchy() {
@@ -33,17 +40,31 @@ class ProfileNameViewController: BaseViewController {
     }
     
     override func configureView() {
+        super.configureView()
+        
         navigationItem.title = "프로필 설정"
         
+        editProfileButton.highlightBorderStyle()
+        editProfileButton.addTarget(self, action: #selector(tapEditProfileButton), for: .touchUpInside)
+        
         nameTextField.borderStyle = .none
-        nameTextField.placeholder = "닉네임을 입력해주세요:)"
+        nameTextField.addTarget(self, action: #selector(changeTextField), for: .editingChanged)
         
         divider.backgroundColor = .accent
         
         noticeLabel.textColor = .accent
-        noticeLabel.text = "닉네임에 특수문자는 들어갈 수 없어요."
         
         completeButton.setTitle("완료", for: .normal)
+    }
+    
+    @objc func tapEditProfileButton() {
+        let vc = ProfileImageViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func changeTextField() {
+        guard let text = nameTextField.text else { return }
+        viewModel.inputName.value = text
     }
     
     override func setupContsraints() {
@@ -56,7 +77,6 @@ class ProfileNameViewController: BaseViewController {
             $0.bottom.equalTo(editProfileButton.snp.bottom).offset(-10)
             $0.trailing.equalTo(editProfileButton.snp.trailing).offset(-10)
         }
-        
         nameTextField.snp.makeConstraints {
             $0.centerX.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(editProfileButton.snp.bottom).offset(30)

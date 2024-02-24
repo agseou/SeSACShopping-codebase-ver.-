@@ -25,6 +25,8 @@ class OnboardingViewController: BaseViewController {
     }
     
     override func configureView() {
+        super.configureView()
+        
         startBtn.configuration?.title = "시작하기"
         startBtn.addTarget(self, action: #selector(tapStartBtn), for: .touchUpInside)
     }

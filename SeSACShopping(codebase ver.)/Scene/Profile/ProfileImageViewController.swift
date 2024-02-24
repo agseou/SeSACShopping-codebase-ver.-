@@ -12,14 +12,15 @@ class ProfileImageViewController: BaseViewController {
     
     let profileImage = ProfileButton()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionView())
-    var selectedImage: Int {
-        get {
-            return UserDefaults.standard.integer(forKey: "profile")
-        }
-        set {
-            UserDefaults.setValue(newValue, forKey: "profile")
-        }
-    }
+    var selectedImage: Int = 1
+//    {
+//        get {
+//            return UserDefaults.standard.integer(forKey: "profile")
+//        }
+//        set {
+//            UserDefaults.setValue(newValue, forKey: "profile")
+//        }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,12 @@ class ProfileImageViewController: BaseViewController {
     }
     
     override func configureView() {
+        super.configureView()
+        
+        navigationItem.title = "프로필 설정"
+        
         profileImage.highlightBorderStyle()
+        profileImage.isUserInteractionEnabled = false
         
         collectionView.register(ProfileImageCollectionViewCell.self, forCellWithReuseIdentifier: "ProfileImageCollectionViewCell")
         collectionView.delegate = self
@@ -55,7 +61,7 @@ class ProfileImageViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width/4
         layout.itemSize = CGSize(width: width, height: width)
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 0
         return layout
     }
@@ -69,17 +75,21 @@ extension ProfileImageViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileImageCollectionViewCell", for: indexPath) as! ProfileImageCollectionViewCell
         
-        let profileImage = indexPath.item + 1
         cell.profileImageCell.setImage(UIImage(named: "profile\(indexPath.item + 1)"), for: .normal)
-        if profileImage == selectedImage {
+        
+        if indexPath.item == selectedImage {
             cell.profileImageCell.highlightBorderStyle()
+        } else {
+            cell.profileImageCell.resetBorderStyle()
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedImage = indexPath.item + 1
+        selectedImage = indexPath.item
+        profileImage.setImage(UIImage(named: "profile\(selectedImage + 1)"), for: .normal)
+        collectionView.reloadData()
     }
     
 }

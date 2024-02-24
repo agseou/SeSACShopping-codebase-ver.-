@@ -24,7 +24,7 @@ class ProfileButton: UIButton {
             self.layer.cornerRadius = self.bounds.width/2
         }
         clipsToBounds = true
-        imageView?.image = UIImage(resource: .profile1)
+        setImage(UIImage(resource: .profile1), for: .normal)
     }
     
 }

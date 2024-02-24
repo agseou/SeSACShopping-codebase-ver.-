@@ -26,7 +26,7 @@ class ProfileImageCollectionViewCell: BaseCollectionViewCell {
     }
     
     override func configureView() {
-        
+        profileImageCell.isUserInteractionEnabled = false
     }
     
     override func setupContsraints() {
