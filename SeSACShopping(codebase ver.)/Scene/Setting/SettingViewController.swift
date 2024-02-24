@@ -7,35 +7,26 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: BaseViewController {
 
     let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureHierarchy()
-        configureView()
-        setupContsraints()
     }
-    
-}
-
-extension SettingViewController: ConfigurableView {
-    func configureHierarchy() {
+    override func configureHierarchy() {
         view.addSubview(tableView)
     }
     
-    func configureView() {
+    override func configureView() {
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    func setupContsraints() {
+    override func setupContsraints() {
         
     }
-    
-    
 }
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,6 +39,5 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
     
 }

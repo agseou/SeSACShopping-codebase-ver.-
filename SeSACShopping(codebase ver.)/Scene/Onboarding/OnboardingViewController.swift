@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: BaseViewController {
 
     let appLogo = UIImageView(image: UIImage(resource: .sesacShopping))
     let onboardingImage = UIImageView(image: UIImage(resource: .onboarding))
@@ -17,26 +17,19 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureHierarchy()
-        configureView()
-        setupContsraints()
     }
-   
-}
-
-extension OnboardingViewController: ConfigurableView {
-    func configureHierarchy() {
+    override func configureHierarchy() {
         view.addSubview(appLogo)
         view.addSubview(onboardingImage)
         view.addSubview(startBtn)
         
     }
     
-    func configureView() {
+    override func configureView() {
         startBtn.setTitle("시작하기", for: .normal)
     }
     
-    func setupContsraints() {
+    override func setupContsraints() {
         appLogo.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(100)
@@ -50,8 +43,4 @@ extension OnboardingViewController: ConfigurableView {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(40)
         }
     }
-}
-
-#Preview {
-    OnboardingViewController()
 }

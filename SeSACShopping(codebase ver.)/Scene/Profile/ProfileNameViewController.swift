@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProfileNameViewController: UIViewController {
+class ProfileNameViewController: BaseViewController {
     
     let editProfileButton = ProfileButton()
     let overlayIcon = UIImageView(image: UIImage(resource: .camera))
@@ -19,17 +19,11 @@ class ProfileNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureHierarchy()
-        configureView()
-        setupContsraints()
+        
+        
     }
     
-
-}
-
-extension ProfileNameViewController: ConfigurableView {
-    func configureHierarchy() {
+    override func configureHierarchy() {
         view.addSubview(editProfileButton)
         view.addSubview(overlayIcon)
         view.addSubview(nameTextField)
@@ -38,8 +32,7 @@ extension ProfileNameViewController: ConfigurableView {
         view.addSubview(completeButton)
     }
     
-    func configureView() {
-        //editProfileButton.im
+    override func configureView() {
         nameTextField.borderStyle = .none
         nameTextField.placeholder = "닉네임을 입력해주세요:)"
         
@@ -51,7 +44,7 @@ extension ProfileNameViewController: ConfigurableView {
         completeButton.setTitle("완료", for: .normal)
     }
     
-    func setupContsraints() {
+    override func setupContsraints() {
         editProfileButton.snp.makeConstraints {
             $0.centerX.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(100)
@@ -84,10 +77,4 @@ extension ProfileNameViewController: ConfigurableView {
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(40)
         }
     }
-    
-    
-}
-
-#Preview {
-    ProfileNameViewController()
 }

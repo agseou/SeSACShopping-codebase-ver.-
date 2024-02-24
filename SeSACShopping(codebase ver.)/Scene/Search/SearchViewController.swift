@@ -7,29 +7,24 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: BaseViewController {
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureHierarchy()
-        configureView()
-        setupContsraints()
-    }
-
-}
-
-extension SearchViewController: ConfigurableView {
-    func configureHierarchy() {
         
     }
     
-    func configureView() {
+    override func configureHierarchy() {
         
     }
     
-    func setupContsraints() {
+    override func configureView() {
+        
+    }
+    
+    override func setupContsraints() {
         
     }
 }

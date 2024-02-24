@@ -8,35 +8,31 @@
 import UIKit
 import SnapKit
 
-class ProfileImageCollectionViewCell: UICollectionViewCell {
+class ProfileImageCollectionViewCell: BaseCollectionViewCell {
     
     var profileImageCell = ProfileButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configureHierarchy()
-        configureCell()
-        setupContsraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureHierarchy() {
-        self.addSubview(profileImageCell)
+    override func configureHierarchy() {
+        contentView.addSubview(profileImageCell)
     }
     
-    private func configureCell() {
-        // 왜 안될까?
-        profileImageCell.highlightBorderStyle()
+    override func configureView() {
+        
     }
     
-    private func setupContsraints() {
+    override func setupContsraints() {
         profileImageCell.snp.makeConstraints {
-            $0.edges.equalTo(contentView)
-            $0.size.equalTo(100)
+            $0.edges.equalTo(safeAreaLayoutGuide).inset(5)
+            $0.width.equalTo(profileImageCell.snp.height)
         }
     }
 }

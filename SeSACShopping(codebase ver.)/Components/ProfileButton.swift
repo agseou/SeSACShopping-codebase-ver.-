@@ -23,6 +23,7 @@ class ProfileButton: UIButton {
         DispatchQueue.main.async {
             self.layer.cornerRadius = self.bounds.width/2
         }
+        clipsToBounds = true
         imageView?.image = UIImage(resource: .profile1)
     }
     
