@@ -25,6 +25,7 @@
 		A085651D2B66438800E44561 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085651C2B66438800E44561 /* ProfileImageViewController.swift */; };
 		A09E2A902B89C46700961823 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2A8F2B89C46700961823 /* BaseViewController.swift */; };
 		A09E2A922B89C52800961823 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2A912B89C52800961823 /* BaseCollectionViewCell.swift */; };
+		A09E2A942B89D7AC00961823 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2A932B89D7AC00961823 /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A085651C2B66438800E44561 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
 		A09E2A8F2B89C46700961823 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A09E2A912B89C52800961823 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		A09E2A932B89D7AC00961823 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				A042E2932B6784C5000F0445 /* WideButton.swift */,
 				A042E2972B6791C7000F0445 /* ProfileButton.swift */,
+				A09E2A932B89D7AC00961823 /* CustomNavigationController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				A08565172B66436900E44561 /* OnboardingViewController.swift in Sources */,
 				A042E2982B6791C7000F0445 /* ProfileButton.swift in Sources */,
 				A042E2962B6790AB000F0445 /* UIButton+Extension.swift in Sources */,
+				A09E2A942B89D7AC00961823 /* CustomNavigationController.swift in Sources */,
 				A08564F22B663D2600E44561 /* AppDelegate.swift in Sources */,
 				A042E29A2B686D8F000F0445 /* ProfileImageCollectionViewCell.swift in Sources */,
 				A085651D2B66438800E44561 /* ProfileImageViewController.swift in Sources */,

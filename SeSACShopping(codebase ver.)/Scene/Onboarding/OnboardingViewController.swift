@@ -22,11 +22,11 @@ class OnboardingViewController: BaseViewController {
         view.addSubview(appLogo)
         view.addSubview(onboardingImage)
         view.addSubview(startBtn)
-        
     }
     
     override func configureView() {
-        startBtn.setTitle("시작하기", for: .normal)
+        startBtn.configuration?.title = "시작하기"
+        startBtn.addTarget(self, action: #selector(tapStartBtn), for: .touchUpInside)
     }
     
     override func setupContsraints() {
@@ -42,5 +42,10 @@ class OnboardingViewController: BaseViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-40)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(40)
         }
+    }
+    
+    @objc func tapStartBtn() {
+        let vc = ProfileNameViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

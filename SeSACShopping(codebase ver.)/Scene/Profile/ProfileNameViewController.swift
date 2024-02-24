@@ -33,6 +33,8 @@ class ProfileNameViewController: BaseViewController {
     }
     
     override func configureView() {
+        navigationItem.title = "프로필 설정"
+        
         nameTextField.borderStyle = .none
         nameTextField.placeholder = "닉네임을 입력해주세요:)"
         

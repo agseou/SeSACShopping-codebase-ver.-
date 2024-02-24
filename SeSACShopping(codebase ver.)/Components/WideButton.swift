@@ -19,10 +19,10 @@ class WideButton: UIButton {
     }
     
     func configureView() {
-        backgroundColor = .accent
-        layer.cornerRadius = 10
-        setTitleColor(.white ,for: .normal)
-        titleLabel?.font = .boldSystemFont(ofSize: 17)
+        var config = Configuration.filled()
+        config.baseForegroundColor = .accent
+        config.baseForegroundColor = .white
+        configuration = config
     }
     
 }
