@@ -55,6 +55,7 @@ class ProfileNameViewController: BaseViewController {
         noticeLabel.textColor = .accent
         
         completeButton.setTitle("완료", for: .normal)
+        completeButton.addTarget(self, action: #selector(tapCompleteButton), for: .touchUpInside)
     }
     
     @objc func tapEditProfileButton() {
@@ -65,6 +66,24 @@ class ProfileNameViewController: BaseViewController {
     @objc func changeTextField() {
         guard let text = nameTextField.text else { return }
         viewModel.inputName.value = text
+    }
+    
+    @objc func tapCompleteButton() {
+        
+        let firstNavController = CustomNavigationController(rootViewController: SearchViewController())
+        let secondNavController = CustomNavigationController(rootViewController: SettingViewController())
+        
+        // 탭 바 아이템 설정
+        firstNavController.tabBarItem = UITabBarItem(title: "First", image: UIImage(named: "firstIcon"), tag: 0)
+        secondNavController.tabBarItem = UITabBarItem(title: "Second", image: UIImage(named: "secondIcon"), tag: 1)
+        
+        // 탭 바 컨트롤러 생성 및 뷰 컨트롤러 설정
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [firstNavController, secondNavController]
+        
+        let vc = tabBarController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     override func setupContsraints() {
