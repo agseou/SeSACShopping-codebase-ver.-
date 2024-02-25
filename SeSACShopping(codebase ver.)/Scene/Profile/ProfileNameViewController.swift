@@ -83,7 +83,9 @@ class ProfileNameViewController: BaseViewController {
         
         let vc = tabBarController
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        present(vc, animated: true) {
+            self.navigationController?.popViewController(animated: false)
+        }
     }
     
     override func setupContsraints() {
