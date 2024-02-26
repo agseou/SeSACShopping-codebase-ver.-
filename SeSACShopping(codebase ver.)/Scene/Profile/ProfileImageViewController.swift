@@ -10,6 +10,7 @@ import SnapKit
 
 class ProfileImageViewController: BaseViewController {
     
+    let viewModel = ProfileImageViewModel()
     let profileImage = ProfileButton()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionView())
     var selectedImage: Int = 1
@@ -24,7 +25,9 @@ class ProfileImageViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.outputProfileIndex.bind { value in
+            self.profileImage.setImage(UIImage(named: "profile\(value)"), for: .normal)
+        }
     }
     
     override func configureHierarchy() {
@@ -76,7 +79,7 @@ extension ProfileImageViewController: UICollectionViewDelegate, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileImageCollectionViewCell", for: indexPath) as! ProfileImageCollectionViewCell
         
         cell.profileImageCell.setImage(UIImage(named: "profile\(indexPath.item + 1)"), for: .normal)
-        
+
         if indexPath.item == selectedImage {
             cell.profileImageCell.highlightBorderStyle()
         } else {
@@ -88,7 +91,8 @@ extension ProfileImageViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedImage = indexPath.item
-        profileImage.setImage(UIImage(named: "profile\(selectedImage + 1)"), for: .normal)
+        //profileImage.setImage(UIImage(named: "profile\(selectedImage + 1)"), for: .normal)
+        viewModel.inputProfileCellTapped.value = indexPath.item
         collectionView.reloadData()
     }
     

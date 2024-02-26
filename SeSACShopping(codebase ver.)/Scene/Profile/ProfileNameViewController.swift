@@ -22,7 +22,7 @@ class ProfileNameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.outputName.bind { value in
+        viewModel.exceptionLabel.bind { value in
             self.noticeLabel.text = value
         }
         viewModel.isActiveButton.bind { value in

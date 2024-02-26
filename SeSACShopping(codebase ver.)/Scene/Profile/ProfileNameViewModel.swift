@@ -11,7 +11,7 @@ class ProfileNameViewModel {
     
     // 닉네임
     var inputName = Observable("")
-    var outputName = Observable("")
+    var exceptionLabel = Observable("") // -> 변수명은 명확한 쓰임에 따라!!!
     
     // 버튼 활성화 여부
     var isActiveButton = Observable(false)
@@ -26,7 +26,7 @@ class ProfileNameViewModel {
     private func isvalidatedName(_ text: String){
         // 1. 빈값 검사
         if text.isEmpty {
-            outputName.value = "닉네임을 입력해주세요 :)"
+            exceptionLabel.value = "닉네임을 입력해주세요 :)"
             isActiveButton.value = false
             return
         }
@@ -35,7 +35,7 @@ class ProfileNameViewModel {
         let containNumberRegex = ".*[0-9]+.*"
         let numberPredicate = NSPredicate(format: "SELF MATCHES %@", containNumberRegex)
         if numberPredicate.evaluate(with: text) {
-            outputName.value = "닉네임에 숫자는 사용할 수 없어요"
+            exceptionLabel.value = "닉네임에 숫자는 사용할 수 없어요"
             isActiveButton.value = false
             return
         }
@@ -44,19 +44,19 @@ class ProfileNameViewModel {
         let containsSpecialCharacterRegex = ".*[^a-zA-Z가-힣].*"
         let specialCharacterPredicate = NSPredicate(format: "SELF MATCHES %@", containsSpecialCharacterRegex)
         if specialCharacterPredicate.evaluate(with: text) {
-            outputName.value = "닉네임에 특수문자는 사용할 수 없어요"
+            exceptionLabel.value = "닉네임에 특수문자는 사용할 수 없어요"
             isActiveButton.value = false
             return
         }
         
         // 3. 글자수 검사 : 2글자 이상 10글자 미만
         if text.count < 1 || text.count > 10 {
-            outputName.value = "2글자 이상 10글자 미만으로 설정해주세요."
+            exceptionLabel.value = "2글자 이상 10글자 미만으로 설정해주세요."
             isActiveButton.value = false
             return
         }
         
-        outputName.value = "\(text)은(는) 가능해요!"
+        exceptionLabel.value = "\(text)은(는) 가능해요!"
         isActiveButton.value = true
     }
 }

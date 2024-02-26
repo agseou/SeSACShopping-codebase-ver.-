@@ -9,12 +9,13 @@ import Foundation
 
 class ProfileImageViewModel {
     
-    //var tempImage = Observable("profile")
-    var outputImage = Observable("profile")
+    var inputProfileCellTapped: Observable<Int?> = Observable(nil)
+    var outputProfileIndex: Observable<Int> = Observable(Int.random(in: 0...13) + 1)
     
     init() {
-        outputImage.bind { value in
-            
+        inputProfileCellTapped.bind { indexItem in
+            guard let indexItem else { return }
+            self.outputProfileIndex.value = indexItem + 1
         }
     }
     
