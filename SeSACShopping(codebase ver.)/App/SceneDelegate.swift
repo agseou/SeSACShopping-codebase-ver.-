@@ -15,11 +15,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(windowScene: scene)
+        let value = UserDefaultsManager.shared.userState
         
-        let vc = CustomNavigationController(rootViewController: OnboardingViewController())
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+        window = UIWindow(windowScene: scene)
+        if value == false {
+            let vc = CustomNavigationController(rootViewController: OnboardingViewController())
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        } else {
+            let vc = CustomTabBarController()
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

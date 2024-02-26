@@ -12,45 +12,58 @@ class SearchViewController: BaseViewController {
 
     let searchBar = UISearchBar()
     let tableView = UITableView()
+    let EmptyImageView = UIImageView(image: UIImage(resource: .empty))
     var searchList: [String] = [] {
-        didSet { tableView.reloadData() }
+        didSet {
+            EmptyImageView.isHidden = searchList.isEmpty ? false : true
+            tableView.isHidden = !searchList.isEmpty ? false : true
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.hideKeyboard()
     }
     
     override func configureHierarchy() {
         view.addSubview(searchBar)
         view.addSubview(tableView)
+        view.addSubview(EmptyImageView)
     }
     
     override func configureView() {
         super.configureView()
         
-        navigationItem.title = "거지님의 새싹 쇼핑"
+        navigationItem.title = "\(UserDefaultsManager.shared.nickName)님의 새싹 쇼핑"
         searchBar.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SearchHistoryTableViewCell.self, forCellReuseIdentifier: "SearchHistoryTableViewCell")
+        
+        EmptyImageView.contentMode = .scaleAspectFit
     }
     
     override func setupContsraints() {
         searchBar.snp.makeConstraints {
             $0.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
         }
-        tableView.snp.makeConstraints {
-            $0.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-            $0.top.equalTo(searchBar.snp.bottom)
+        [tableView, EmptyImageView].forEach{ 
+            $0.snp.makeConstraints {
+                $0.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+                $0.top.equalTo(searchBar.snp.bottom)
+            }
         }
     }
 }
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       let vc = SearchDetailViewController()
+       vc.searchKeyword = searchBar.text!
+       navigationController?.pushViewController(vc, animated: true)
         searchList.insert(searchBar.text!, at: 0)
          searchBar.text = nil
     }

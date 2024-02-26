@@ -50,8 +50,12 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if indexPath.section == 0 {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "profileCell")
-            cell.textLabel?.text = "떠나고 싶은 거지"
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "profileCell")
+            let profile = ProfileButton()
+            profile.highlightBorderStyle()
+            cell.accessoryView?.addSubview(profile)
+            cell.textLabel?.text = "떠나고 싶은 \(UserDefaultsManager.shared.nickName)"
+            cell.detailTextLabel?.text = "찜한 상품123"
         } else {
             cell = UITableViewCell(style: .default, reuseIdentifier: "defaultCell")
             cell.textLabel?.text = list[indexPath.row]
@@ -64,8 +68,22 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath == IndexPath(item: 0, section: 0) {
             let vc = ProfileNameViewController()
             navigationController?.pushViewController(vc, animated: true)
-        }else if indexPath == IndexPath(item: 4, section: 1) {
-            dismiss(animated: true)
+            
+        } else if indexPath == IndexPath(item: 4, section: 1) {
+            let alert = UIAlertController(title: "처음부터 시작하기", message: "데이터를 모두 초기화하시겠습니까?", preferredStyle: .alert)
+            
+            let okBtn = UIAlertAction(title: "확인", style: .default) { _ in
+                self.dismiss(animated: true)
+                let vc = CustomNavigationController(rootViewController: OnboardingViewController())
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
+            let cancelBtn = UIAlertAction(title: "취소", style: .cancel)
+            
+            alert.addAction(okBtn)
+            alert.addAction(cancelBtn)
+            
+            present(alert, animated: true)
         }
     }
     

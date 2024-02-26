@@ -28,6 +28,7 @@ class ProfileNameViewController: BaseViewController {
         viewModel.isActiveButton.bind { value in
             self.completeButton.isEnabled = value
         }
+        self.hideKeyboard()
     }
     
     override func configureHierarchy() {
@@ -69,21 +70,13 @@ class ProfileNameViewController: BaseViewController {
     }
     
     @objc func tapCompleteButton() {
+        guard let text = nameTextField.text else { return }
+        UserDefaultsManager.shared.nickName = text
         
-        let firstNavController = CustomNavigationController(rootViewController: SearchViewController())
-        let secondNavController = CustomNavigationController(rootViewController: SettingViewController())
-        
-        // 탭 바 아이템 설정
-        firstNavController.tabBarItem = UITabBarItem(title: "First", image: UIImage(named: "firstIcon"), tag: 0)
-        secondNavController.tabBarItem = UITabBarItem(title: "Second", image: UIImage(named: "secondIcon"), tag: 1)
-        
-        // 탭 바 컨트롤러 생성 및 뷰 컨트롤러 설정
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [firstNavController, secondNavController]
-        
-        let vc = tabBarController
+        let vc = CustomTabBarController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true) {
+            UserDefaultsManager.shared.userState = true
             self.navigationController?.popViewController(animated: false)
         }
     }

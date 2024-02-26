@@ -16,7 +16,7 @@ class OnboardingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UserDefaultsManager.shared.userState = false
     }
     override func configureHierarchy() {
         view.addSubview(appLogo)

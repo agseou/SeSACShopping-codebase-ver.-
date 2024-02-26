@@ -40,6 +40,11 @@
 		A09E2AB42B8A3F2B00961823 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2AB32B8A3F2B00961823 /* APIKey.swift */; };
 		A09E2AB72B8ACA1E00961823 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A09E2AB62B8ACA1E00961823 /* Kingfisher */; };
 		A09E2AB92B8ACF2600961823 /* SearchWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2AB82B8ACF2600961823 /* SearchWebViewController.swift */; };
+		A09E2ABB2B8B34C700961823 /* ProfileImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2ABA2B8B34C700961823 /* ProfileImageViewModel.swift */; };
+		A09E2ABD2B8B5A2700961823 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2ABC2B8B5A2700961823 /* UserDefaultsManager.swift */; };
+		A09E2ABF2B8B5D5800961823 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2ABE2B8B5D5800961823 /* CustomTabBarController.swift */; };
+		A09E2AC12B8B75D400961823 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2AC02B8B75D400961823 /* UIViewController+Extension.swift */; };
+		A09E2AC32B8B98CA00961823 /* CustomProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E2AC22B8B98CA00961823 /* CustomProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +79,11 @@
 		A09E2AB12B8A3ECF00961823 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A09E2AB32B8A3F2B00961823 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		A09E2AB82B8ACF2600961823 /* SearchWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWebViewController.swift; sourceTree = "<group>"; };
+		A09E2ABA2B8B34C700961823 /* ProfileImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewModel.swift; sourceTree = "<group>"; };
+		A09E2ABC2B8B5A2700961823 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		A09E2ABE2B8B5D5800961823 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		A09E2AC02B8B75D400961823 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A09E2AC22B8B98CA00961823 /* CustomProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +141,7 @@
 				A042E2922B67849D000F0445 /* Components */,
 				A08564FF2B663D2900E44561 /* Info.plist */,
 				A09E2AB12B8A3ECF00961823 /* .gitignore */,
+				A09E2ABC2B8B5A2700961823 /* UserDefaultsManager.swift */,
 			);
 			path = "SeSACShopping(codebase ver.)";
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				A08565132B663FAF00E44561 /* SettingViewController.swift */,
+				A09E2AC22B8B98CA00961823 /* CustomProfileView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -169,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				A042E2952B6790AB000F0445 /* UIButton+Extension.swift */,
+				A09E2AC02B8B75D400961823 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,6 +194,7 @@
 				A08565152B66435A00E44561 /* Onboarding */,
 				A085650B2B663E6900E44561 /* Search */,
 				A085650C2B663E8A00E44561 /* Setting */,
+				A09E2ABE2B8B5D5800961823 /* CustomTabBarController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -207,6 +221,7 @@
 				A085651A2B66437E00E44561 /* ProfileNameViewController.swift */,
 				A09E2A952B89E40C00961823 /* ProfileNameViewModel.swift */,
 				A085651C2B66438800E44561 /* ProfileImageViewController.swift */,
+				A09E2ABA2B8B34C700961823 /* ProfileImageViewModel.swift */,
 				A042E2992B686D8F000F0445 /* ProfileImageCollectionViewCell.swift */,
 			);
 			path = Profile;
@@ -335,22 +350,27 @@
 				A09E2A902B89C46700961823 /* BaseViewController.swift in Sources */,
 				A09E2A922B89C52800961823 /* BaseCollectionViewCell.swift in Sources */,
 				A09E2AA32B8A248300961823 /* SearchDetailCollectionViewCell.swift in Sources */,
+				A09E2AC12B8B75D400961823 /* UIViewController+Extension.swift in Sources */,
 				A08565142B663FAF00E44561 /* SettingViewController.swift in Sources */,
 				A09E2AB92B8ACF2600961823 /* SearchWebViewController.swift in Sources */,
 				A09E2A9F2B8A111200961823 /* BaseTableViewCell.swift in Sources */,
 				A09E2AA12B8A237C00961823 /* SearchDetailViewController.swift in Sources */,
 				A09E2AA62B8A2DEE00961823 /* ShoppingAPIManager.swift in Sources */,
 				A08565172B66436900E44561 /* OnboardingViewController.swift in Sources */,
+				A09E2AC32B8B98CA00961823 /* CustomProfileView.swift in Sources */,
 				A042E2982B6791C7000F0445 /* ProfileButton.swift in Sources */,
 				A09E2AB42B8A3F2B00961823 /* APIKey.swift in Sources */,
 				A042E2962B6790AB000F0445 /* UIButton+Extension.swift in Sources */,
 				A09E2AAC2B8A2E9D00961823 /* Shopping.swift in Sources */,
 				A09E2A962B89E40C00961823 /* ProfileNameViewModel.swift in Sources */,
 				A09E2AAE2B8A2F3900961823 /* ShoppingAPI.swift in Sources */,
+				A09E2ABD2B8B5A2700961823 /* UserDefaultsManager.swift in Sources */,
 				A09E2A942B89D7AC00961823 /* CustomNavigationController.swift in Sources */,
 				A08564F22B663D2600E44561 /* AppDelegate.swift in Sources */,
 				A042E29A2B686D8F000F0445 /* ProfileImageCollectionViewCell.swift in Sources */,
 				A085651D2B66438800E44561 /* ProfileImageViewController.swift in Sources */,
+				A09E2ABB2B8B34C700961823 /* ProfileImageViewModel.swift in Sources */,
+				A09E2ABF2B8B5D5800961823 /* CustomTabBarController.swift in Sources */,
 				A042E2942B6784C5000F0445 /* WideButton.swift in Sources */,
 				A08565122B663FA100E44561 /* SearchViewController.swift in Sources */,
 				A085651B2B66437E00E44561 /* ProfileNameViewController.swift in Sources */,
