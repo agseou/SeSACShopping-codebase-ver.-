@@ -10,19 +10,20 @@ import SnapKit
 
 class SearchViewController: BaseViewController {
 
+    let viewModel = SearchViewModel()
+    
     let searchBar = UISearchBar()
     let tableView = UITableView()
     let EmptyImageView = UIImageView(image: UIImage(resource: .empty))
-    var searchList: [String] = [] {
-        didSet {
-            EmptyImageView.isHidden = searchList.isEmpty ? false : true
-            tableView.isHidden = !searchList.isEmpty ? false : true
-            tableView.reloadData()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.searchHistoryList.bind { value in
+            self.EmptyImageView.isHidden = value.isEmpty ? false : true
+            self.tableView.isHidden = !value.isEmpty ? false : true
+            self.tableView.reloadData()
+        }
 
         self.hideKeyboard()
     }
@@ -64,21 +65,21 @@ extension SearchViewController: UISearchBarDelegate {
        let vc = SearchDetailViewController()
        vc.searchKeyword = searchBar.text!
        navigationController?.pushViewController(vc, animated: true)
-        searchList.insert(searchBar.text!, at: 0)
+        viewModel.searchHistoryList.value.insert(searchBar.text!, at: 0)
          searchBar.text = nil
     }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchList.count
+        return viewModel.searchHistoryList.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchHistoryTableViewCell", for: indexPath) as! SearchHistoryTableViewCell
         
         cell.selectionStyle = .none
-        cell.searchLabel.text = searchList[indexPath.row]
+        cell.searchLabel.text = viewModel.searchHistoryList.value[indexPath.row]
         cell.deleteBtn.tag = indexPath.row
         cell.deleteBtn.addTarget(self, action: #selector(tapDeleteBtn), for: .touchUpInside)
         
@@ -86,12 +87,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func tapDeleteBtn(_ sender: UIButton) {
-        searchList.remove(at: sender.tag)
+        viewModel.searchHistoryList.value.remove(at: sender.tag)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SearchDetailViewController()
-        vc.searchKeyword = searchList[indexPath.row]
+        vc.searchKeyword = viewModel.searchHistoryList.value[indexPath.row]!
         navigationController?.pushViewController(vc, animated: true)
     }
 }

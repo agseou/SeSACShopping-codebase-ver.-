@@ -91,7 +91,6 @@ extension ProfileImageViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedImage = indexPath.item
-        //profileImage.setImage(UIImage(named: "profile\(selectedImage + 1)"), for: .normal)
         viewModel.inputProfileCellTapped.value = indexPath.item
         collectionView.reloadData()
     }
